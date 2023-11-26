@@ -13,7 +13,7 @@ from Models.products import *
 app = FastAPI(
     title="Amazon App"
 )
-client = motor.motor_asyncio.AsyncIOMotorClient("mongodb+srv://kmickey1992:kAmmxxAz6jSn9hei@cluster0.bkux7zm.mongodb.net/?retryWrites=true&w=majority")
+client = motor.motor_asyncio.AsyncIOMotorClient(os.environ["MONGODB_URL"])
 db = client.amazon
 product_collection = db.get_collection("product")
 
