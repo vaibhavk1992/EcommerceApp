@@ -30,31 +30,6 @@ def is_database_online():
 
 app.add_api_route("/health", health([is_database_online]))
 
-# class ProductModel(BaseModel):
-#     """
-#     Container for a single product record.
-#     """
-#     productid: Optional[int]
-#     name: Optional[str]
-#     category: Optional[str]
-#     price: Optional[float]
-#     created_at: Optional[datetime]
-#
-# class UpdateProductModel(BaseModel):
-#     """
-#     Container for a single Product record.
-#     """
-#     name: Optional[str]
-#     category: Optional[str]
-#     price: Optional[float]
-#     created_at: Optional[datetime]
-#
-# class ProductCollection(BaseModel):
-#     """
-#     Container for a single product record.
-#     """
-#     product:List[ProductModel]
-
 @app.post("/product/"  ,response_description="Add new product",
 response_model=ProductModel,
 status_code=status.HTTP_201_CREATED,
